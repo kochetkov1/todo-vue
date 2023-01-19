@@ -38,15 +38,29 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      focusedSpan: true,
+      focusedInput: false,
+    };
   },
   methods: {
+    toggleSpan() {
+      this.focusedSpan = !this.focusedSpan;
+      this.focusedInput = !this.focusedInput;
+    },
+    toggleInput() {
+      this.focusedSpan = !this.focusedSpan;
+      this.focusedInput = !this.focusedInput;
+    },
     removeTask(id) {
       this.$emit('remove-task', id);
     },
     updateTask(todo) {
       this.$emit('update-task', todo);
     },
+  },
+  mounted() {
+    // this.show = false;
   },
 };
 </script>
